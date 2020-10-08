@@ -8,9 +8,9 @@ function App() {
 
 
   return (
-    <main>
-      <h1>Jeremy Boynton Likes to Keep track Counter</h1>
-      <div>Count: {count}</div>
+    <main className="main">
+      <h1>CLICK YES to support no violence after our presidential election</h1>
+      <div>This Many American's support no violence: {count}</div>
 
       <button onClick={() => setCount(count + 1)}>YES</button>
 
