@@ -1,22 +1,28 @@
 main {
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://i.imgur.com/I5xwg8J.jpg");
+  background-size: cover;
+  border: 2px solid black;
   align-content: center;
   box-sizing: border-box;
   display: grid;
   font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
     'Arial', sans-serif;
   hyphens: auto;
-  line-height: 1.65;
+  /* line-height: 1.65; */
   margin: 0 auto;
-  max-width: 680px;
+  /* max-width: 680px; */
   min-height: 100vh;
   padding: 72px 0;
   text-align: center;
-}
+} 
 h1 {
   font-size: 45px;
+  color:white;
 }
 h2 {
   margin-top: 1.5em;
+  color:white;
 }
 p {
   font-size: 16px;
@@ -41,4 +47,40 @@ pre {
 code:before,
 code:after {
   content: '\`';
+}
+
+
+/* .Container{
+  align-content: center;
+  background: lightgray;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 1rem 20rem 1rem 20rem;
+} */
+
+.Btn{
+  width: 128px;
+  height: 64px;
+  background: blue;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 35px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 10px 10px 5px rgb(0, 0, 0);
+}
+
+.Btn:Hover{
+  background: rgb(53, 53, 248);
+  cursor: pointer;
+  /* width: 118px;
+  height: 54px; */
+  box-shadow:  inset 0 0 10px #000000;
+}
+
+
+.CountText{
+  font-weight: bold;
+  font-size: 4rem;
 }
