@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import './App.css';
@@ -6,6 +7,27 @@ function App() {
   const [count, setCount] = useState(0);
 
 
+  const handleClick = () => {
+    axios
+      .post(`http://localhost:5150/api/votes${count}`)
+      .then((res) => {
+        setCount(count + 1)
+      })
+      .catch((err) => {
+        console.error(err)
+      })
+  }
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:5150/api/votes')
+      .then((res) => {
+        setCount(res.data)
+      })
+      .catch((err) => {
+        console.error(err);
+      })
+  }, [])
 
   return (
     <main>
