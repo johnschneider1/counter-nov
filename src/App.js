@@ -9,9 +9,9 @@ function App() {
 
   const handleClick = () => {
     axios
-      .post(`http://localhost:5150/api/votes${count}`)
+      .post("http://localhost:5150/api/votes")
       .then((res) => {
-        setCount(count + 1)
+        setCount(res.data.votes)
       })
       .catch((err) => {
         console.error(err)
@@ -22,7 +22,7 @@ function App() {
     axios
       .get('http://localhost:5150/api/votes')
       .then((res) => {
-        setCount(res.data)
+        setCount(res.data.votes)
       })
       .catch((err) => {
         console.error(err);
@@ -35,7 +35,7 @@ function App() {
         <h1>Support the #No Violence movement.  Cast your vote below and unite with Americans celebrating their diversity by raising their voices to say --- No matter the outcome of our Presidential election, let’s stand for No Violence post election.  And pay it forward.</h1>
         <h2>This Many American's support no violence: <h1 className='CountText'>{count}</h1></h2>
 
-        <button className="Btn" onClick={() => setCount(count + 1)}>YES</button>
+        <button className="Btn" onClick={() => handleClick()}>YES</button>
       </div>
     </main>
   );
