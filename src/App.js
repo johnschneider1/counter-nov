@@ -9,7 +9,7 @@ function App() {
 
   const handleClick = () => {
     axios
-      .post("http://localhost:5150/api/votes")
+      .post("https://counter-nov.herokuapp.com/api/votes")
       .then((res) => {
         setCount(res.data.votes)
       })
@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5150/api/votes')
+      .get('https://counter-nov.herokuapp.com/api/votes')
       .then((res) => {
         setCount(res.data.votes)
       })
