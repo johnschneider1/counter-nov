@@ -6,6 +6,8 @@ import './App.css';
 function App() {
   const [count, setCount] = useState(0);
   const [newIp, setNewIp] = useState();
+  const [ben, setBen] = useState(false);
+
 
 
   // test address http://localhost:5150/api/votes
@@ -56,6 +58,19 @@ function App() {
 
   // }, [])
 
+  function hideSeek() {
+    var x = document.getElementById("ben");
+    // var zoo = document.getElementById("ty")
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      // zoo.style.display = "none";
+    } else {
+      x.style.display = "none";
+      // zoo.style.display = "block";
+
+    }
+  }
+
   return (
     <main>
       <div className="Container">
@@ -63,7 +78,13 @@ function App() {
         <h2>This Many Americans support no violence: <h1 className='CountText'>{count}</h1></h2>
         {/* <h3>{newIp}</h3> */}
 
-        <button className="Btn" onClick={() => handleClick()}>YES</button>
+        <button id="ben" className="Btn" onClick={() => {
+          handleClick();
+          hideSeek();
+          setBen(true);
+        }}>YES</button>
+
+        {ben ? <h1 id="ty" className="thank-you">Thank you for supporting!</h1> : null}
       </div>
     </main>
   );
